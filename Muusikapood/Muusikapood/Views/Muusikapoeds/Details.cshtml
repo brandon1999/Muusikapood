@@ -1,0 +1,50 @@
+﻿@model Muusikapood.Models.Muusikapoed
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Muusikapoed</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.instrument)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.instrument)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Kvaliteet)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Kvaliteet)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.hind)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.hind)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.kirjeldus)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.kirjeldus)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

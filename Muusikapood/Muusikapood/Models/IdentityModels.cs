@@ -29,5 +29,7 @@ namespace Muusikapood.Models
         {
             return new ApplicationDbContext();
         }
+
+        public System.Data.Entity.DbSet<Muusikapood.Models.Muusikapoed> Muusikapoods { get; set; }
     }
 }

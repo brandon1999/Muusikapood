@@ -1,0 +1,56 @@
+﻿@model Muusikapood.Models.Muusikapoed
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Muusikapoed</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.instrument)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.instrument)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Kvaliteet)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Kvaliteet)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.hind)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.hind)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.kirjeldus)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.kirjeldus)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

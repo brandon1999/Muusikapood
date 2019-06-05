@@ -31,7 +31,7 @@ namespace Muusikapood.Controllers
             }
         }
         // GET: Role
-        [Authorize(Users ="admin")]
+        [Authorize(Roles = "admin" )]
         public ActionResult Index()
         {
             List<RoleViewModel> list = new List<RoleViewModel>();

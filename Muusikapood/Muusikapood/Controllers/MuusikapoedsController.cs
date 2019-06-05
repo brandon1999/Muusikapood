@@ -20,11 +20,6 @@ namespace Muusikapood.Controllers
             return View(db.Muusikapoods.ToList());
         }
         // tegin adminnile eraldi lehe, kuhu saab ainult Admin ligi.
-        [Authorize]
-        public ActionResult admin()
-        {
-            return View();
-        }
 
         // GET: Muusikapoeds/Details/5
         public ActionResult Details(int? id)
@@ -52,7 +47,7 @@ namespace Muusikapood.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,instrument,Kvaliteet,hind,kirjeldus")] Muusikapoed muusikapoed)
+        public ActionResult Create([Bind(Include = "Id,instrument,Kvaliteet,hind,kirjeldus,osta")] Muusikapoed muusikapoed)
         {
             if (ModelState.IsValid)
             {
@@ -84,7 +79,7 @@ namespace Muusikapood.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,instrument,Kvaliteet,hind,kirjeldus")] Muusikapoed muusikapoed)
+        public ActionResult Edit([Bind(Include = "Id,instrument,Kvaliteet,hind,kirjeldus,osta")] Muusikapoed muusikapoed)
         {
             if (ModelState.IsValid)
             {

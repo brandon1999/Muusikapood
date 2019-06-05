@@ -193,6 +193,14 @@
     <Compile Include="Migrations\201906050944157_role.Designer.cs">
       <DependentUpon>201906050944157_role.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201906051126307_osta.cs" />
+    <Compile Include="Migrations\201906051126307_osta.Designer.cs">
+      <DependentUpon>201906051126307_osta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201906051204072_osta2.cs" />
+    <Compile Include="Migrations\201906051204072_osta2.Designer.cs">
+      <DependentUpon>201906051204072_osta2.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
@@ -208,6 +216,7 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\pildid\guitar.png" />
+    <Content Include="Content\pildid\musicbg.jpg" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -296,6 +305,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201906050944157_role.resx">
       <DependentUpon>201906050944157_role.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201906051126307_osta.resx">
+      <DependentUpon>201906051126307_osta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201906051204072_osta2.resx">
+      <DependentUpon>201906051204072_osta2.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

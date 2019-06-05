@@ -17,8 +17,8 @@ namespace Muusikapood.Models
             public int hind { get; set; }
         //Kirjeldab oma instrumenti.
             public string kirjeldus { get; set; }
-         
-        
+
+
         // Tegin nii, et kasutaja ei saaks ise kirjutada suvalist teksti "kvaliteedi" alla vaid peab valima.  
         public enum kvaliteedid
         {

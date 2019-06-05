@@ -2,3 +2,54 @@
     ViewBag.Title = "Home Page";
 }
 
+<html>
+
+<head>
+    <title>Muusikapood</title>
+
+    <style>
+        #container {
+            position: relative;
+            width: 1140px;
+            height: 800px;
+        }
+
+        #block {
+            background: #808080;
+            filter: alpha(opacity=30);
+            /* IE */
+            -moz-opacity: 0.3;
+            /* Mozilla */
+            opacity: 0.5;
+            /* CSS3 */
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+        }
+
+        #text {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        
+    }
+    </style>
+</head>
+
+
+<body background="~/Content/pildid/musicbg.jpg">
+    <div id="container">
+
+
+        <div id="block"></div>
+        <div style="color:white;" id="text"><h1> Tere tulemast!</h1></div>
+
+    </div>
+
+</body>
+
+</html>

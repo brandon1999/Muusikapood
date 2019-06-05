@@ -12,12 +12,18 @@ namespace Muusikapood.Controllers
 {
     public class MuusikapoedsController : Controller
     {
-        private MuusikapoodDb db = new MuusikapoodDb();
-
+        private ApplicationDbContext db = new ApplicationDbContext();
+        [Authorize]
         // GET: Muusikapoeds
         public ActionResult Index()
         {
-            return View(db.Muusikadb.ToList());
+            return View(db.Muusikapoods.ToList());
+        }
+        // tegin adminnile eraldi lehe, kuhu saab ainult Admin ligi.
+        [Authorize]
+        public ActionResult admin()
+        {
+            return View();
         }
 
         // GET: Muusikapoeds/Details/5
@@ -27,14 +33,14 @@ namespace Muusikapood.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Muusikapoed muusikapoed = db.Muusikadb.Find(id);
+            Muusikapoed muusikapoed = db.Muusikapoods.Find(id);
             if (muusikapoed == null)
             {
                 return HttpNotFound();
             }
             return View(muusikapoed);
         }
-        
+        [Authorize]
         // GET: Muusikapoeds/Create
         public ActionResult Create()
         {
@@ -50,7 +56,7 @@ namespace Muusikapood.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.Muusikadb.Add(muusikapoed);
+                db.Muusikapoods.Add(muusikapoed);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
@@ -65,7 +71,7 @@ namespace Muusikapood.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Muusikapoed muusikapoed = db.Muusikadb.Find(id);
+            Muusikapoed muusikapoed = db.Muusikapoods.Find(id);
             if (muusikapoed == null)
             {
                 return HttpNotFound();
@@ -96,7 +102,7 @@ namespace Muusikapood.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Muusikapoed muusikapoed = db.Muusikadb.Find(id);
+            Muusikapoed muusikapoed = db.Muusikapoods.Find(id);
             if (muusikapoed == null)
             {
                 return HttpNotFound();
@@ -109,8 +115,8 @@ namespace Muusikapood.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Muusikapoed muusikapoed = db.Muusikadb.Find(id);
-            db.Muusikadb.Remove(muusikapoed);
+            Muusikapoed muusikapoed = db.Muusikapoods.Find(id);
+            db.Muusikapoods.Remove(muusikapoed);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

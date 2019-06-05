@@ -18,6 +18,12 @@ namespace Muusikapood.Models
         }
     }
 
+    public class ApplicationRole : IdentityRole
+    {
+        public ApplicationRole() : base() { }
+        public ApplicationRole(string roleName) : base(roleName) { }
+    }
+
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
         public ApplicationDbContext()
@@ -31,5 +37,6 @@ namespace Muusikapood.Models
         }
 
         public System.Data.Entity.DbSet<Muusikapood.Models.Muusikapoed> Muusikapoods { get; set; }
+
     }
 }
